@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface: 255 253 250;
+    --surface-muted: 250 248 245;
+    --ink: 30 41 59;
+    --ink-muted: 100 116 139;
+    --accent: 217 119 87;
+    --accent-soft: 255 237 224;
+    --accent-gold: 212 175 122;
+    --border-subtle: 226 232 240;
+    /* shadcn-style aliases (RGB triplets for Tailwind rgb(var())) */
+    --background: 255 253 250;
+    --foreground: 30 41 59;
+    --primary: 217 119 87;
+    --primary-foreground: 255 255 255;
+    --secondary: 250 248 245;
+    --secondary-foreground: 30 41 59;
+    --muted: 250 248 245;
+    --muted-foreground: 100 116 139;
+  }
+
+  .dark {
+    --surface: 15 23 42;
+    --surface-muted: 23 33 54;
+    --ink: 248 250 252;
+    --ink-muted: 148 163 184;
+    --accent: 232 150 116;
+    --accent-soft: 55 40 35;
+    --accent-gold: 180 155 110;
+    --border-subtle: 51 65 85;
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --primary: 232 150 116;
+    --primary-foreground: 15 23 42;
+    --secondary: 23 33 54;
+    --secondary-foreground: 248 250 252;
+    --muted: 23 33 54;
+    --muted-foreground: 148 163 184;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+  }
+
+  .hero-grain {
+    background-image: radial-gradient(rgb(15 23 42 / 0.08) 0.5px, transparent 0.5px);
+    background-size: 3px 3px;
+    mask-image: linear-gradient(to bottom, black 12%, transparent 92%);
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
